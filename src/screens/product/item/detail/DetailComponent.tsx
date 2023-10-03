@@ -5,24 +5,25 @@ import { useState } from 'react'
 import { Img } from '../../../../assets/icons'
 import { useAppDispatch, useAppSelector } from '../../../../app/hooks'
 import { addCart, setFav } from '../../../../app/feature/likeSlice/cartSlice'
+import { Link, useParams } from 'react-router-dom'
 
 const Size=['XS','S','M','L','XL']
 
 export const DetailComponent = () => {
-
+  const params = useParams()
+  const userId = params.id
+   
+  const Item = useAppSelector(state=> state.cartArray.Arr.find((item)=>item.id === userId));
+  const {id,incart,price,like} = Item!
   const dispatch = useAppDispatch();
 
-  const CartArr = useAppSelector((state=>state.cartArray.Arr))
-
   const toggleCart = () => {
-    dispatch(addCart('10'));
+    dispatch(addCart(id));
 
     };
   const toggleLike = () => {
-    dispatch(setFav('10'));
+    dispatch(setFav(id));
     };
- 
-
 
     const [total,setTotal] = useState(1)
 
@@ -42,14 +43,14 @@ export const DetailComponent = () => {
               <p className="flex font-medium text-2xl"> SHORT PRINTED DRESS</p>
                 <div className="border-[1px] rounded-full">
               <Checkbox 
-              checked={CartArr[9].like}
+              checked={like}
               icon={<FavoriteBorder/>}
                checkedIcon={<Favorite/>}
                onClick={toggleLike}
               color="error"/>
             </div>
               </div>
-              <p className="flex font-medium text-xl"> $39.99</p>
+              <p className="flex font-medium text-xl">${price}</p>
             
             </div>
             <div className="flex flex-col gap-2">
@@ -108,8 +109,10 @@ export const DetailComponent = () => {
               </div>
             </div>
             <div className="flex flex-row gap-5 flex-wrap">
-              <Button variant="contained" style={{ width: '230px',height:'57px' }}>shop now</Button>
-              <Button variant="outlined" color='inherit' style={{ width: '240px',height:'57px'  }} onClick={toggleCart}>Add to Basket</Button>
+              <Link to='/checkout'>
+                <Button variant="contained" style={{ width: '230px',height:'57px' }}>shop now</Button>
+              </Link>
+              <Button variant="outlined" color='inherit' style={{ width: '240px',height:'57px'  }} onClick={toggleCart}>{incart?'Remove':'Add to cart'} </Button>
             </div>
           </div>
   )

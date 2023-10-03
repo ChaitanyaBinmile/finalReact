@@ -56,6 +56,14 @@ import Care4 from './Care4.png'
 import Care5 from './Care5.png'
 import Care6 from './Care6.png'
 import Lock from './Lock.png'
+import Paypal from './Paypal.png'
+import Mastercard from './Mastercard.png'
+import Bitcoin from './Bitcoin.png'
+import Ship1 from './Ship1.png'
+import Ship2 from './Ship2.png'
+import Ship3 from './Ship3.png'
+
+
 
 export const Img = {
     logo: Logo,
@@ -116,5 +124,10 @@ export const Img = {
     care5: Care5,
     care6: Care6,
     lock: Lock,
-
+    paypal: Paypal,
+    mastercard: Mastercard,
+    bitcoin:Bitcoin,
+    ship1:Ship1,
+    ship2:Ship2,
+    ship3:Ship3,
 }

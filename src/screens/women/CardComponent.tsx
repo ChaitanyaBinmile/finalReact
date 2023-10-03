@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { addCart, setFav } from "../../app/feature/likeSlice/cartSlice";
 import { Link } from "react-router-dom";
 
+
 export const CardComponent = () => {
 
   const dispatch = useAppDispatch();
@@ -18,9 +19,9 @@ export const CardComponent = () => {
     };
 
   return (
-    <div className="flex flex-wrap w-[100%] gap-6 sm:gap-8 py-[68px] justify-start">
+    <div className="flex flex-wrap w-[100%] gap-10 sm:gap-8 py-[68px] justify-start">
     {
-      CartArr.map(({id,name,image,incart,price,like}) =>
+      CartArr.map(({id,name,image,incart,price,like,origPrice}) =>
       <div className="shadow-xl w-[288px] rounded-md">
         <div className="relative">
           <img className="h-[350px] w-[100%] rounded-t-md object-cover object-top" src={image} />
@@ -39,7 +40,7 @@ export const CardComponent = () => {
         <div className="flex flex-col relative p-4 gap-2">
           <div className="flex justify-between items-center">
             <div>
-              <Link to='/product'>
+            <Link to={`/product/${id}`}>
                 <p className="px-2 text-[13px] font-medium cursor-pointer">{name}</p>
               </Link>
               <p className="px-2 text-[10px] text-[#555]">
@@ -60,7 +61,7 @@ export const CardComponent = () => {
           <div className="px-2 flex gap-4 items-center ">
             <p className="text-[red] text-sm font-medium">${price}</p>
             <p className="text-[#9D9D9D] text-sm ">
-              <del>$290</del>
+              <del>${origPrice.toFixed(2)}</del>
             </p>
             <p className="text-xs font-light text-[red]">-10%</p>
           </div>

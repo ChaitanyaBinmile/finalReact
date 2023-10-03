@@ -27,8 +27,8 @@ export const CheckoutDetailComponent = () => {
     const price =  tax+total+(gift?10.90:0);
 
   return (
-    <div className='w-[100%] md:w-fit self-end'>
-         <div className='p-8 w-[90vw] md:w-[370px] lg:w-[400px] sm:min-w-[400px]  h-fit bg-[#E9E9E9] flex flex-col gap-6 rounded self-end   '>
+    <div className='w-[100%] md:w-fit '>
+         <div className='p-8 w-[100%] md:w-[370px] lg:w-[400px] sm:min-w-[400px]  h-fit bg-[#E9E9E9] flex flex-col gap-6 rounded '>
             <p className='font-medium'> Order Summary</p>
             <div className='flex w-[100%] justify-between'>
                 <p className='font-light text-sm'>Price</p>

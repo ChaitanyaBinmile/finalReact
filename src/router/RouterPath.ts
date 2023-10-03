@@ -19,7 +19,7 @@ export const RouterPath:RouteType={
         Component: WomenScreen
     },
     Product:{
-        path:'/product',
+        path:'/product/:id',
         Component: ProductScreen
     },
     Checkout:{

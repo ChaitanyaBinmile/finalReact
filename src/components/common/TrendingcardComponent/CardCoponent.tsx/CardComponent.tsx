@@ -5,7 +5,7 @@ export const CardComponent = () => {
     <div className='w-[95%]'>
       <div className='relative ' >
           <img className='absolute left-3 top-3' src={Img.new}/>
-          <img className='rounded-t-md w-[100%]  h-fit' src={Img.trending}/>
+          <img className='rounded-t-md w-[100%]  h-fit object-cover object-top' src={Img.trending}/>
       <div className='flex rounded-b-md bg-black p-4 justify-around'>
         <div className='flex flex-col  gap-2'>
           <h1 className='text-white'>Cool & Sexy Calvin Klein</h1>

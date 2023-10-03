@@ -71,7 +71,7 @@ export const CartsComponent = ({ color }: { color: ColorType }) => {
 {
   CartArr.length===0?<div className="flex items-center justify-center mt-6">
     <Link to='/women'>
-    <button className='bg-[#3d6cd1] py-2 px-6 rounded font-medium text-[14px]'>Discover What Is New
+    <button className='bg-[#3d6cd1] py-2 px-6 rounded font-medium text-[14px] text-white'>Discover What Is New
     </button>
     </Link>
     </div>:<div><div className='m-4 flex justify-around items-center'>
@@ -83,6 +83,7 @@ export const CartsComponent = ({ color }: { color: ColorType }) => {
       <button className='bg-[#3d6cd1] py-2 px-6 rounded font-medium text-[13px] text-white'>View Bag</button>
 
     </Link>
+    
   <button className='text-black py-2 px-6 rounded text-[13px] font-medium border-[1px] border-black'>Checkout</button>
   </div></div>
 } 

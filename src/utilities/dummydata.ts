@@ -8,7 +8,8 @@ export const WomenList:MovieType[] =[
         image: Img.photo,
         like: false,
         incart: false,
-        price: 52.10
+        price: 52.10,
+        origPrice: 52.10*(1.111111112)
     },
     {
         id: '2',
@@ -16,7 +17,8 @@ export const WomenList:MovieType[] =[
         image: Img.photo2,
         like: false,
         incart: false,
-        price: 32.10
+        price: 32.10,
+        origPrice: 32.10*(1.111111112)
     },
     {
         id: '3',
@@ -24,7 +26,8 @@ export const WomenList:MovieType[] =[
         image: Img.photo3,
         like: false,
         incart: false,
-        price: 60.10
+        price: 60.10,
+        origPrice: 60.10*(1.111111112)
     },
     {
         id: '4',
@@ -32,7 +35,8 @@ export const WomenList:MovieType[] =[
         image: Img.photo4,
         like: false,
         incart: false,
-        price: 70.03
+        price: 70.03,
+        origPrice: 70.03*(1.111111112)
     },
     {
         id: '5',
@@ -40,7 +44,8 @@ export const WomenList:MovieType[] =[
         image: Img.photo5,
         like: false,
         incart: false,
-        price: 40.85
+        price: 40.85,
+        origPrice: 40.85*(1.111111112)
     },
     {
         id: '6',
@@ -48,7 +53,8 @@ export const WomenList:MovieType[] =[
         image: Img.photo6,
         like: false,
         incart: false,
-        price: 55.00
+        price: 55.00,
+        origPrice: 55.00*(1.111111112)
     },
     {
         id: '7',
@@ -56,7 +62,8 @@ export const WomenList:MovieType[] =[
         image: Img.photo7,
         like: false,
         incart: false,
-        price: 52.00
+        price: 52.00,
+        origPrice: 52.00*(1.111111112)
     },
     {
         id: '8',
@@ -64,7 +71,8 @@ export const WomenList:MovieType[] =[
         image: Img.photo8,
         like: false,
         incart: false,
-        price: 62.10
+        price: 62.10,
+        origPrice: 62.10*(1.111111112)
     },
     {
         id: '9',
@@ -72,7 +80,8 @@ export const WomenList:MovieType[] =[
         image: Img.photo9,
         like: false,
         incart: false,
-        price: 70.10
+        price: 70.10,
+        origPrice: 70.10*(1.111111112)
     },
     {
         id: '10',
@@ -80,7 +89,8 @@ export const WomenList:MovieType[] =[
         image: Img.dressmain,
         like: false,
         incart: false,
-        price: 90.99
+        price: 90.99,
+        origPrice: 90.99*(1.111111112)
     },
 
 ]
