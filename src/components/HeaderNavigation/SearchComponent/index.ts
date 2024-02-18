@@ -1,0 +1,1 @@
+export { Img } from "../../../assets/icons";
