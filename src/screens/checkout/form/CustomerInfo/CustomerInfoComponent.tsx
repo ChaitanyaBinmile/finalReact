@@ -1,8 +1,12 @@
-import { TextField, Button, Stack } from "@mui/material"
+import { TextField, Button, Stack, Select, MenuItem, FormControl, InputLabel } from "@mui/material"
 import {useForm} from "react-hook-form"
 import {DevTool} from "@hookform/devtools"
+import { useAppDispatch } from "../../../../app/hooks"
+import { addCustomer } from "../../../../app/feature/customerSlice/customerSlice"
 
 export const CustomerInfoComponent = () => {
+    const dispatch = useAppDispatch();
+     
 
     type FormValues ={
         email:string
@@ -22,7 +26,7 @@ export const CustomerInfoComponent = () => {
             country:'India',
             state:'uttar pradesh',
             address:'',
-            phone:91
+            phone:91,
         },
     });
 
@@ -32,6 +36,7 @@ export const CustomerInfoComponent = () => {
 
     const onSubmit = (data:FormValues) => {
         console.log(data);
+        dispatch(addCustomer(data))
     }; 
 
   return (
@@ -69,13 +74,20 @@ export const CustomerInfoComponent = () => {
                 </div>
                 <h1 className="text-lg font-medium">Shipping Address</h1>
                 <div className="flex flex-col gap-4">
-                    
-                        <TextField label='country' type="country"  {...register("country",{
-                            required:"country is required"
-                        })}
-                        error={!!errors.country}  
-                        helperText={errors.country?.message}
-                        />
+                <FormControl>
+                    <InputLabel id="country">Country</InputLabel>
+                        <Select
+                        label="Country"
+                        id="Country"
+                        {...register("country", { required: "Country is required" })}
+                        >
+                        <MenuItem value={"india"}>India</MenuItem>
+                        <MenuItem value={"usa"}>USA</MenuItem>
+                        <MenuItem className="w-full hover:bg-slate-300" value={"russia"}>
+                            russia
+                        </MenuItem>
+                        </Select>
+                    </FormControl>
                         <TextField label='State' type="state"  {...register("state",{
                             required:"State is required"
                         })}

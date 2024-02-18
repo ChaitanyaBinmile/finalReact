@@ -3,9 +3,10 @@ import { Box, Tab} from '@mui/material';
 import { CheckoutDetailComponent } from './detail/CheckoutDetailComponent';
 import { useState } from 'react';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
-import { CartComponent } from './form/Cart/CartComponent';
+import { CartComponent } from './form/cart/CartComponent';
 import { CustomerInfoComponent } from './form/CustomerInfo/CustomerInfoComponent';
 import { PaymentComponent } from './form/payment/PaymentComponent';
+import { ConfirmationComponent } from './form/confirmation/ConfirmationComponent';
 
 export const CheckoutScreen = () => {
 
@@ -17,7 +18,7 @@ export const CheckoutScreen = () => {
 
     const [value, setValue] = useState('1');
     
-    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    const handleChange = (_event: React.SyntheticEvent, newValue: string) => {
         setValue(newValue);}
 
 
@@ -38,19 +39,21 @@ export const CheckoutScreen = () => {
           </TabList>
         </Box>
         
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16 justify-between p-8 items-center max-w-full'>
-          <div className='w-[100%] max-w-[800px]'>
+        <div className='flex flex-wrap gap-2 justify-around p-8 items-center max-w-full'>
+          <div className='w-[100%] max-w-[600px]'>
             
           <TabPanel value="1">
             <CartComponent/>
           </TabPanel>
-          <TabPanel value="2">
+          <TabPanel value="2" style={{ padding: '0px' }}>
             <CustomerInfoComponent/>
           </TabPanel>
-          <TabPanel value="3">
+          <TabPanel value="3" style={{ padding: '0px' }}>
             <PaymentComponent/>
           </TabPanel>
-          <TabPanel value="4">Item Four</TabPanel>
+          <TabPanel value="4">
+            <ConfirmationComponent/>
+          </TabPanel>
           </div>
           <div className='flex flex-col gap-6 justify-center items-center w-fit'>
             <CheckoutDetailComponent/>

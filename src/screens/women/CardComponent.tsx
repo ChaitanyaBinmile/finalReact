@@ -1,7 +1,7 @@
 import { AddShoppingCart,  FavoriteBorderSharp,  FavoriteSharp,  ShoppingCart } from "@mui/icons-material";
 import { Checkbox, Rating } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { addCart, setFav } from "../../app/feature/likeSlice/cartSlice";
+import { addCart, setFav } from "../../app/feature/cartSlice/cartSlice";
 import { Link } from "react-router-dom";
 
 
@@ -22,10 +22,10 @@ export const CardComponent = () => {
     <div className="flex flex-wrap w-[100%] gap-10 sm:gap-8 py-[68px] justify-start">
     {
       CartArr.map(({id,name,image,incart,price,like,origPrice}) =>
-      <div className="shadow-xl w-[288px] rounded-md">
+      <div className="shadow-xl w-[288px] rounded-md" style={{ transition: 'all 5s ease-in-out' }}>
         <div className="relative">
-          <img className="h-[350px] w-[100%] rounded-t-md object-cover object-top" src={image} />
-          <div className="absolute top-0 right-0 p-4">
+          <img className="relative h-[350px] w-[100%] rounded-t-md object-cover z-20 object-top hover:z-0 " src={image} />
+          <div className={`absolute top-0 right-0 p-4 ${like ? 'z-20' : ''} hover:z-20 transition-all ease-in-out duration-1000`}>
           <Checkbox
               icon={<FavoriteBorderSharp style={{ fontSize: '30px' }}/>}
               checked={like}

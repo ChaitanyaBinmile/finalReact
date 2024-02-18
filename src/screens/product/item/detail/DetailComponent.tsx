@@ -4,7 +4,7 @@ import { CircleComponent } from '../../../women/Navbar/CircleComponent.tsx/Circl
 import { useState } from 'react'
 import { Img } from '../../../../assets/icons'
 import { useAppDispatch, useAppSelector } from '../../../../app/hooks'
-import { addCart, setFav } from '../../../../app/feature/likeSlice/cartSlice'
+import { addCart, setFav } from '../../../../app/feature/cartSlice/cartSlice'
 import { Link, useParams } from 'react-router-dom'
 
 const Size=['XS','S','M','L','XL']

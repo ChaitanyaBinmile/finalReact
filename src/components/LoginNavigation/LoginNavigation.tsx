@@ -5,7 +5,7 @@ const arrMenu=['USD','English']
 
 export const LoginNavigation = () => {
   return (
-    <div className='hidden h-[65px] w-[100  %] bg-[#262626] items-center text-white justify-around sm:flex'>
+    <div className='hidden h-[60px] w-[100%] bg-[#262626] items-center text-white justify-around sm:flex'>
         <div className="flex gap-2 items-center">
             <Img.categories/>
             <h1 className="font-medium text-xl"> Categories</h1>

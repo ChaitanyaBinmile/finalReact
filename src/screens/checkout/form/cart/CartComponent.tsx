@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from '../../../../app/hooks';
-import { addCart } from '../../../../app/feature/likeSlice/cartSlice';
+import { addCart } from '../../../../app/feature/cartSlice/cartSlice';
 import { Link } from 'react-router-dom';
-import { Checkbox } from '@mui/material';
+import { Button, Checkbox } from '@mui/material';
 import { DeleteOutline, RecyclingRounded } from '@mui/icons-material';
 import { CircleComponent } from '../../../women/Navbar/CircleComponent.tsx/CircleComponent';
 
@@ -31,20 +31,20 @@ export const CartComponent = () => {
 
           
         
-      <div className='flex justify-between items-center'>
+      <div className='flex justify-between items-center bg-slate-200 pl-2 rounded-md'>
         <Link to={`/product/${id}`}>
-        <div className='flex gap-8 items-center'>
+        <div className='flex gap-8 items-center '>
 
-        <img className='h-16 w-16 rounded-lg' src={image} alt="" />
-        <div className='flex flex-col gap-2'>
+        <img className='h-16 w-16 rounded-md object-cover object-top' src={image} alt="" />
+        <div className='flex flex-col gap-2 '>
             <p className='text-black text-md font-medium'>{name}</p>
             <p className='flex items-center text-black text-md font-light'>color
             <CircleComponent color='blue'/>
             </p>
         </div>
         
-        </div>
         <p className='text-black text-md font-light'>${price}</p>
+        </div>
         
         </Link>
         <Checkbox
@@ -63,7 +63,8 @@ export const CartComponent = () => {
 {
   CartArr.length===0?
   <Link to='/women'>
-  <div className="flex items-center justify-center mt-6"><button className='bg-[#3d6cd1] py-2 px-6 rounded font-medium text-[14px] text-white'>Discover What Is New</button>
+  <div className="flex items-center justify-center mt-6"><Button  variant="contained" className='bg-[#3d6cd1] py-2 px-6 rounded font-medium text-[14px] text-white'>Discover What Is New
+    </Button>
   </div>
   </Link>
   :<div></div>

@@ -1,6 +1,6 @@
-import { Checkbox } from "@mui/material";
+import { Button, Checkbox } from "@mui/material";
 import { Img } from "..";
-import { addCart, setFav } from "../../../app/feature/likeSlice/cartSlice";
+import { addCart, setFav } from "../../../app/feature/cartSlice/cartSlice";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { AddShoppingCart,  FavoriteRounded,  ShoppingCart } from "@mui/icons-material";
 import { Link } from "react-router-dom";
@@ -46,7 +46,7 @@ export const FavComponents = () => {
         />
 
       <div className='flex w-[100%] justify-between items-center'>
-        <img className='h-10 w-10 ' src={image} alt="" />
+        <img className='h-16 w-14 object-cover object-top' src={image} alt="" />
         <div className='flex flex-col gap-1'>
         <p className='text-black text-xs font-medium'>{name}</p>
         <p className='text-black text-md font-light'>${price}</p>
@@ -66,11 +66,11 @@ export const FavComponents = () => {
   }
   {
    FavArr.length===0?<div className='mt-4 flex justify-around'>
-   <button className='bg-[#3d6cd1] py-2 px-6 rounded font-medium text-[13px]'>Your wishlist is empty !!</button>
+   <Button variant='contained' className='bg-[#3d6cd1] py-2 px-6 rounded font-medium text-[13px]'>Your wishlist is empty !!</Button>
    </div>:
     <Link to='/checkout'>
    <div className='mt-4 flex justify-around'>
-      <button className='bg-[#3d6cd1] py-2 px-6 rounded font-medium text-[13px]'>View Bag</button>
+      <Button variant='contained' className='bg-[#3d6cd1] py-2 px-6 rounded font-medium text-[13px]'>View Bag</Button>
    </div>
     </Link>
   }

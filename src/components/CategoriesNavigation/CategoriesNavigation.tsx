@@ -5,7 +5,7 @@ const arr = ['Woman','Man','Mother-Child','Home&Furniture','Super market','Cosme
 
 export const CategoriesNavigation = () => {
   return (
-    <ul className="hidden text-sm p-6 justify-around md:flex overflow-visible w-[100%]">
+    <ul className="hidden text-sm p-[18px] justify-around md:flex overflow-visible w-[100%]">
       {arr.map((item) => (
         <div key={item}>
           <Link to='/women' >

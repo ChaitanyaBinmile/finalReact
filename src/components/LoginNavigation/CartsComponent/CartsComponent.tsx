@@ -1,7 +1,7 @@
 import { Img } from "../../HeaderNavigation";
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
-import { addCart } from "../../../app/feature/likeSlice/cartSlice";
-import { Checkbox } from "@mui/material";
+import { addCart } from "../../../app/feature/cartSlice/cartSlice";
+import { Button, Checkbox } from "@mui/material";
 import { AddShoppingCart, ShoppingCart } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
@@ -51,7 +51,7 @@ export const CartsComponent = ({ color }: { color: ColorType }) => {
     <div className='flex flex-col gap-4 mt-2'>
 
       <div className='flex justify-between items-center'>
-        <img className='h-10 w-10 ' src={image} alt="" />
+        <img className='h-16 w-14 object-cover object-top' src={image} alt="" />
         <div className='flex flex-col gap-1'>
         <p className='text-black text-xs font-medium'>{name}</p>
         <p className='text-black text-md font-light'>${price}</p>
@@ -71,8 +71,8 @@ export const CartsComponent = ({ color }: { color: ColorType }) => {
 {
   CartArr.length===0?<div className="flex items-center justify-center mt-6">
     <Link to='/women'>
-    <button className='bg-[#3d6cd1] py-2 px-6 rounded font-medium text-[14px] text-white'>Discover What Is New
-    </button>
+    <Button  variant="contained" className='bg-[#3d6cd1] py-2 px-6 rounded font-medium text-[14px] text-white'>Discover What Is New
+    </Button>
     </Link>
     </div>:<div><div className='m-4 flex justify-around items-center'>
   <p className='text-black text-xs'> Total</p>
@@ -80,11 +80,12 @@ export const CartsComponent = ({ color }: { color: ColorType }) => {
   </div>
   <div className='mt-4 flex justify-around'>
     <Link to='/checkout'>
-      <button className='bg-[#3d6cd1] py-2 px-6 rounded font-medium text-[13px] text-white'>View Bag</button>
+      <Button variant='contained' className='bg-[#3d6cd1] py-2 px-6 rounded font-medium text-[13px] text-white'>View Bag</Button>
 
     </Link>
     
-  <button className='text-black py-2 px-6 rounded text-[13px] font-medium border-[1px] border-black'>Checkout</button>
+  <Button variant="outlined" 
+  className='text-black py-2 px-6 rounded text-[13px] font-medium border-[1px] border-black'>Checkout</Button>
   </div></div>
 } 
 </ul>

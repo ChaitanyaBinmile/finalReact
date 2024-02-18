@@ -4,17 +4,30 @@ import { SidebarComponent } from './Sidebar/SidebarComponent';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { updateCart } from '../../app/feature/cartSlice/cartSlice';
 
 
 export const WomenScreen = () => {
 
+        const CartArr = useAppSelector((state=>state.cartArray.Arr))
+
+        const dispatch= useAppDispatch()
     
         const [sort, setSort] = useState('');
-      
         const handleChange = (event: SelectChangeEvent) => {
-          setSort(event.target.value);
-        };
+            const selectedValue = event.target.value;
 
+            if (selectedValue === '10') {
+              const sortedArray = [...CartArr].sort((a, b) => a.price - b.price);
+              dispatch(updateCart(sortedArray))
+              setSort(selectedValue);
+            } else if (selectedValue === '20') {
+              const sortedArray = [...CartArr].sort((a, b) => b.price - a.price);
+              setSort(selectedValue);
+              dispatch(updateCart(sortedArray))
+          }
+        }
   return (
     <div className='flex flex-col '>
         <div className='flex px-12 py-4'>
@@ -45,8 +58,8 @@ export const WomenScreen = () => {
             <MenuItem value="" sx={{ fontSize: 'small' }}>
             None
             </MenuItem>
-            <MenuItem value={10} sx={{ fontSize: 'small' }}>low to high</MenuItem>
-            <MenuItem value={20} sx={{ fontSize: 'small' }}>high to low</MenuItem>
+            <MenuItem value={'10'} sx={{ fontSize: 'small' }}>low to high</MenuItem>
+            <MenuItem value={'20'} sx={{ fontSize: 'small' }}>high to low</MenuItem>
         </Select>
         </FormControl>
         </div>
